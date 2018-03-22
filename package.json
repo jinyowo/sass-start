@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "node-sass style.scss -w -o .",
-    "run": "node-sass style.scss -o ."
+    "watch": "./node_modules/node-sass/bin/node-sass ./start/style.scss -w -o ./start",
+    "comp": "./node_modules/node-sass/bin/node-sass ./start/style.scss -o ./start"
   },
   "author": "",
   "license": "ISC"
