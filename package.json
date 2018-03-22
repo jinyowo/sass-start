@@ -7,6 +7,9 @@
     "watch": "./node_modules/node-sass/bin/node-sass ./start/style.scss -w -o ./start",
     "comp": "./node_modules/node-sass/bin/node-sass ./start/style.scss -o ./start"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "jin heo",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
 }
