@@ -1,0 +1,114 @@
+body {
+  padding: 10px; }
+
+.ex2 .container {
+  background-color: #84B1ED;
+  height: 50px; }
+
+.ex2 article {
+  margin: 5px;
+  height: 40px;
+  background-color: #67D5B5; }
+
+/* Variable */
+p.var {
+  background-color: #C89EC4; }
+
+p.var2 {
+  background-color: #EE7785; }
+
+/* Math Operators */
+.container {
+  width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 62.5%; }
+
+/* Built-in Functions */
+button.darken {
+  border: 0;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  background: #C89EC4;
+  box-shadow: 0px 5px 0px #b67db0; }
+
+button.lighten {
+  border: 0;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  background: #C89EC4;
+  box-shadow: 0px 5px 0px #eddfec; }
+
+/* Nesting */
+.nesting {
+  background-color: #f6eff5;
+  display: inline-block;
+  width: 200px;
+  height: 200px; }
+  .nesting .step2 {
+    background-color: #eddfec;
+    width: 80%;
+    height: 80%; }
+    .nesting .step2 .step3 {
+      background-color: #C89EC4;
+      width: 80%;
+      height: 80%; }
+      .nesting .step2 .step3 .step4 {
+        background-color: #b67db0;
+        width: 80%;
+        height: 80%; }
+        .nesting .step2 .step3 .step4 .step5 {
+          background-color: #6C49B8;
+          width: 80%;
+          height: 80%; }
+          .nesting .step2 .step3 .step4 .step5:hover {
+            background-color: #FFBC42; }
+
+/* Extend */
+.bolder {
+  font-weight: bold; }
+
+.origin, .border, .bolder {
+  padding: 10px;
+  font-size: 17px;
+  background-color: #EE7785;
+  display: inline-block;
+  width: 130px;
+  height: 80px; }
+
+.border {
+  border: 2px solid black; }
+
+/* Mixin */
+.mixin {
+  border: 1px solid gray;
+  color: #218380;
+  font-size: 20px; }
+  @media (max-width: 767px) {
+    .mixin {
+      font-size: 15px; } }
+
+@media (max-width: 767px) {
+  .mixin.big {
+    display: none; } }
+
+.mixin.small {
+  display: none; }
+  @media (max-width: 767px) {
+    .mixin.small {
+      display: block; } }
+
+/* Function */
+.func {
+  margin: 10px 0;
+  border: 1px solid gray;
+  background: #84B1ED; }
+
+.func.i650 {
+  width: 65%; }
+
+.func.i300 {
+  width: 30%; }

@@ -1,0 +1,12 @@
+{
+  "name": "sass-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass style.scss -w -o .",
+    "run": "node-sass style.scss -o ."
+  },
+  "author": "",
+  "license": "ISC"
+}

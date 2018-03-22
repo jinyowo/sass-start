@@ -1,0 +1,179 @@
+body {
+  padding: 10px;
+}
+.ex2 .container {
+  background-color: #84B1ED;
+  height: 50px;
+}
+
+.ex2 article {
+  margin: 5px;
+  height: 40px;
+  background-color: #67D5B5;
+}
+
+/* Variable */
+$primary-color: #EE7785;
+
+$primary-color: #67D5B5 !default;
+
+p.var {
+  $primary-color: #C89EC4;
+  background-color: $primary-color;
+}
+
+p.var2 {
+  background-color: $primary-color;
+}
+
+/* Math Operators */
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+/* Built-in Functions */
+$buttonColor: #C89EC4;
+$buttonDark: darken($buttonColor, 10%);
+$buttonLight: lighten($buttonColor, 20%);
+$buttonMoreLight: lighten($buttonColor, 25%);
+
+button.darken {
+  border: 0;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  background: $buttonColor;
+  box-shadow: 0px 5px 0px $buttonDark;
+}
+
+button.lighten {
+  border: 0;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  background: $buttonColor;
+  box-shadow: 0px 5px 0px $buttonLight;
+}
+
+/* Nesting */
+.nesting {
+  background-color: $buttonMoreLight;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+
+  .step2 {
+    background-color: $buttonLight;
+    width: 80%;
+    height: 80%;
+
+    .step3 {
+      background-color: $buttonColor;
+      width: 80%;
+      height: 80%;
+
+      .step4 {
+        background-color: $buttonDark;
+        width: 80%;
+        height: 80%;
+
+        .step5 {
+          background-color: #6C49B8;
+          width: 80%;
+          height: 80%;
+
+          &:hover {
+            background-color: #FFBC42;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extend */
+%bold {
+  font-weight: bold;
+}
+
+.origin {
+  padding: 10px;
+  font-size: 17px;
+  background-color: #EE7785;
+  display: inline-block;
+  width: 130px;
+  height: 80px;
+}
+
+.border {
+  @extend .origin;
+  border: 2px solid black;
+}
+
+.bolder {
+  @extend .origin;
+  @extend %bold;
+}
+
+/* Mixin */
+@mixin headline ($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+@mixin media($queryString) {
+  @media #{$queryString} {  // #{}: 문자열 그대로 출력
+    @content;                // @content: 내용이 들어갈 부분
+  }
+}
+
+.mixin {
+  border: 1px solid gray;
+  @include headline(#218380, 20px);
+
+  @include media("(max-width: 767px)") {
+    font-size: 15px;
+  }
+}
+
+.mixin.big {
+  @include media("(max-width: 767px)") {
+    display: none;
+  }
+}
+
+.mixin.small {
+  display: none;
+
+  @include media("(max-width: 767px)") {
+    display: block;
+  }
+}
+
+/* Function */
+.func {
+  margin: 10px 0;
+  border: 1px solid gray;
+  background: #84B1ED;
+}
+
+@function calc-percent($input) {
+  @return ($input / 1000px) * 100%;
+}
+
+@function cp($input) {     // 자주쓰는 함수 축약형으로 선언 (결과물의 용량은 그대로)
+  @return calc-percent($input);
+}
+
+.func.i650 {
+  width: calc-percent(650px);   // cp === calc-percent
+}
+
+.func.i300 {
+  width: cp(300px);
+}
